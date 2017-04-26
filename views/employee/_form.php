@@ -17,16 +17,22 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'fname')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'mname')->textInput(['maxlength' => true]) ?>
-<?php /*
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'rank')->textInput() ?>
+    <?= $form->field($model, 'title')->dropDownList(
+        ["", 'Mr.'=>'Mr.', "Ms."=>"Ms.", "Mrs."=>"Mrs.", "Dr."=>"Dr.",
+         "Engr."=>"Engr.", "Capt."=>"Capt.", "Rev. Fr."=>"Rev. Fr.", "Msgr."=>"Msgr."]
+    ) ?>
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
+<?php /**
+
+    <?= $form->field($model, 'rank')->textInput() ?>
+
     <?= $form->field($model, 'pic')->textInput(['maxlength' => true]) ?>
+
 **/ ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
